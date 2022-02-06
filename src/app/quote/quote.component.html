@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let quote of quotes">
       {{quote.publishedBy}}
-   
+    <app-quote-details [quote]="quote"></app-quote-details>
     </li>
   </ul>
 </div>
