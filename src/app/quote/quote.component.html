@@ -1,8 +1,9 @@
 <div>
   <ul>
-    <li *ngFor="let quote of quotes">
+    <li *ngFor="let quote of quotes;let i = index">
       {{quote.publishedBy}}
-    <app-quote-details [quote]="quote"></app-quote-details>
+      <button (click)='toggleDetails(i)'>View Details</button>
+    <app-quote-details *ngIf="quote.showDescription" [quote]="quote"></app-quote-details>
     </li>
   </ul>
 </div>
