@@ -1,5 +1,5 @@
 textarea{
-  max-width: 500px;
+  min-width: 500px;
   opacity: 0.5;
 
 }
