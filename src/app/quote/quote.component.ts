@@ -16,6 +16,14 @@ export class QuoteComponent implements OnInit {
     new Quote(5,'Turkish','“Everybody wants to be famous, but nobody wants to do the work. I live by that. You grind hard so you can play hard. At the end of the day, you put all the work in, and eventually it’ll pay off. It could be in a year, it could be in 30 years. Eventually, your hard work will pay off.”','Kevin Hart',new Date(2020,2,22)),
   ]
 
+  addNewQuote(quote:any){
+    let quoteLength = this.quotes.length
+    quote.id = quoteLength +1
+    quote.dateCreated = new Date(quote.dateCreated)
+    this.quotes.push(quote) 
+ 
+ }
+
   toggleDetails(index:any){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
@@ -30,6 +38,9 @@ export class QuoteComponent implements OnInit {
     }
   }
 
+
+
+ 
   constructor() { }
 
   ngOnInit(): void {
