@@ -1,0 +1,14 @@
+textarea{
+  max-width: 500px;
+  opacity: 0.5;
+
+}
+
+button {
+  font-size: 15px;
+  padding:5px 5px;
+}
+form {
+  color: white;
+}
+
