@@ -15,7 +15,7 @@ export class DateCountPipe implements PipeTransform {
 
     const timeDiff = viewDate.getTime() - postDate.getTime();
     const dayDiff = Math.round(timeDiff/singleDay)
-    return null;
+    return dayDiff;
   }
 
 }

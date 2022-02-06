@@ -1,3 +1,5 @@
-<p>
-  {{quote.quote}}
-</p>
+<div>
+  <p>Published by:{{quote.publishedBy}}</p>
+  <p>Post was Created:{{quote.dateCreated | date | dateCount}} days ago</p>
+  <button (click)="quoteDelete(true)">Delete</button>
+</div>
