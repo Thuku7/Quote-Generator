@@ -1,10 +1,10 @@
 
 <div class="container-fluid">
-  <h2>Create a new Quote</h2>
+  <h2>Publish a new Quote</h2>
   <hr>
   <form  (ngSubmit)="submitQuote()" #quoteForm="ngForm">
       <div class="form-group">
-          <label for="publishedBy">Author Name:</label>
+          <label for="publishedBy">Name of Publisher:</label>
           <input type="text" placeholder="Name of Publisher..." required class="form-control" id="authorName" [(ngModel)]="newQuote.author" name="authorName"  #authorName="ngModel">
           <div [hidden]="authorName.valid || authorName.pristine" class="alert alert-danger mt-2">
               <p>Authors Name is required</p>
@@ -19,8 +19,8 @@
           </div>
       </div>
       <div class="form-group">
-          <label for="submiitedBy">Submitted By:</label>
-          <input type="text" placeholder="Submitted By..." required class="form-control" id="submiitedBy" [(ngModel)]="newQuote.publishedBy" name="submittedBy"  #submittedBy="ngModel">
+          <label for="submiitedBy">Author </label>
+          <input type="text" placeholder="Author Name..." required class="form-control" id="submiitedBy" [(ngModel)]="newQuote.publishedBy" name="submittedBy"  #submittedBy="ngModel">
           <div [hidden]="submittedBy.valid || submittedBy.pristine" class="alert alert-danger mt-2">
               <p>Name of person submitting quote is required</p>
           </div>
