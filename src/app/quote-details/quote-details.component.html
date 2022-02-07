@@ -1,5 +1,6 @@
 <div>
   <p>Published by:{{quote.publishedBy}}</p>
   <p>Post was Created:{{quote.dateCreated | date | dateCount}} days ago</p>
-  <button (click)="quoteDelete(true)">Delete</button>
+  <!-- <button (click)="quoteDelete(true)"  type="button" btn-danger>Delete</button> -->
+  <button type="button" class="btn btn-danger" (click)="quoteDelete(true)">Delete Quote</button>
 </div>
