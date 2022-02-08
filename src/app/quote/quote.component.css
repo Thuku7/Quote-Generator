@@ -1,6 +1,6 @@
 .container{
-  
-  
+ 
+  display: flex;
   max-width: 100vw;
   margin: 0;
   overflow: hidden;
@@ -8,21 +8,7 @@
 
 }
 
-#container{
-  display: flex;
-}
-
-#right {
-  height:100vh;
-  color: whitesmoke;
 
 
-}
-
-#left {
-  color: white;
-  font-size: large;
-  font-family: 'Courier New', Courier, monospace;
-}
 
 
