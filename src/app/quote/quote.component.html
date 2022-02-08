@@ -1,25 +1,25 @@
-<div class="container">
+<div class="container" id="container">
   <div class="row">
-
+    <div class="col-md-6 px-2" id="left">
+      <div *ngFor='let quote of quotes;let i = index'>
+         <div appMostliked class="quote-element my-3 p-2">
+          <div>
+              <p class="quote">"{{ quote.quote }}"</p>
+              <div class="popularity">
+                  <p class="authorName">Author: {{ quote.author }}</p>
+                 
+              </div>
+              <button class="btn btn-outline-warning" (click)="toggleDetails(i)">Toggle Details</button>
+          </div>
+  
+          <div *ngIf="quote.showDescription">
+              <app-quote-details [quote]='quote' (toDelete)="quoteDelete($event, i)"></app-quote-details>
+          </div>  
+         </div>             
+      </div>
   </div>
-  <div class="col-md-6 px-2" id="left">
-    <div *ngFor='let quote of quotes;let i = index'>
-       <div appMostliked class="quote-element my-3 p-2">
-        <div>
-            <p class="quote">"{{ quote.quote }}"</p>
-            <div class="popularity">
-                <p class="authorName">Author: {{ quote.author }}</p>
-               
-            </div>
-            <button class="btn btn-outline-warning" (click)="toggleDetails(i)">Toggle Details</button>
-        </div>
+  </div>
 
-        <div *ngIf="quote.showDescription">
-            <app-quote-details [quote]='quote' (toDelete)="quoteDelete($event, i)"></app-quote-details>
-        </div>  
-       </div>             
-    </div>
-</div>
 <div class="row">
   <div class="col-md-6" id="right">
       <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
