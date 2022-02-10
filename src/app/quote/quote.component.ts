@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Quote } from '../quote';
 @Component({
   selector: 'app-quote',
@@ -37,10 +37,36 @@ export class QuoteComponent implements OnInit {
       }
     }
   }
-
-
-
+  
+ wanted:any;
  
+ upvoteQuote(index:number){
+  this.quotes[index].upvote +=1
+
+  let upvotes =[]
+  for(let quote of this.quotes){
+    upvotes.push(quote.upvote)
+ }
+  let indexQuote = upvotes.indexOf(Math.max(...upvotes))
+  console.log(indexQuote)
+  this.styleQuote(this.quotes, indexQuote)
+  this.wanted = indexQuote
+  return this.wanted
+}
+
+
+styleQuote(array:any, index:number){
+ let targetQuote = array[index]
+ console.log(targetQuote)   
+}
+
+downvoteQuote(index:any){
+ this.quotes[index].downvote 
+
+}
+
+  
+
   constructor() { }
 
   ngOnInit(): void {
