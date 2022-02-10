@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <h2 text>Publish a new Quote</h2>
   <hr>
-  <form  (ngSubmit)="submitQuote()" #quoteForm="ngForm">
+  <form  (ngSubmit)="onsubmit(); quoteForm.resetForm()" #quoteForm="ngForm">
       <div class="form-group">
           <label for="publishedBy">Name of Publisher:</label>
           <input type="text" placeholder="Name of Publisher..." required class="form-control" id="authorName" [(ngModel)]="newQuote.author" name="authorName"  #authorName="ngModel">

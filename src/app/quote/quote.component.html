@@ -1,42 +1,33 @@
 <div class="container">
-
-  <div class="row">
-    <div class="col-md-6 px-2" id="quoteDisplay">
-      <div *ngFor="let quote of quotes;let i = index">
-        <div class="displayArea my-3 px-2">
-          <div class="QuoteDetails">
-            <p class="quote">"{{ quote.quote }}"</p>
-            <div class="QuoteDetails">
-              <p class="authorName">Author: {{ quote.author }}</p>
+  
+  <div id="displayQuote">
+    <div *ngFor="let quote of quotes;let i = index">
+      <div appLikes>
+        <div>
+          <p class="quote">"{{ quote.quote }}"</p>
+          <p class="authorName">Author: {{ quote.author }}</p>
+          <div>
+            
             <div>
               <input (click)="upvoteQuote(i)" type="image" id="upvote" name="upvote" src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1633927469/icons8-thumbs-up-24_mbxcpf.png"> <span>{{ quote.upvote }}</span>
               <input (click)="downvoteQuote(i)" type="image" id="downvote" name="downvote" src="https://res.cloudinary.com/dblrvhi8r/image/upload/v1633927460/3671877_down_thumbs_icon_gvgdhj.png" height="24px" width="24px"> <span> {{quote.downvote }}</span>
-            </div>
-            </div>
-            <button class="btn btn-outline-warning QuoteDetails" (click)="toggleDetails(i)">Toggle Details</button>
+            </div> 
+            <div>
+              <button class="btn btn-outline-warning QuoteDetails" (click)="toggleDetails(i)">Toggle Details</button>
+            </div> 
+            <div *ngIf="quote.showDescription">
+              <app-quote-details [quote]='quote' (toDelete)="quoteDelete($event, i)"></app-quote-details>
+          </div>     
           </div>
-
-          <div *ngIf="quote.showDescription">
-            <app-quote-details [quote]='quote' (toDelete)="quoteDelete($event, i)"></app-quote-details>
-        </div>  
-
+          
         </div>
-
       </div>
-
     </div>
-
-    <div class="col-md-6" id="right">
-      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
   </div>
   
-
-  </div>
-
-  <!-- <div class="col-md-6" id="right">
+  <div class="col-md-6" id="right">
     <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-</div> -->
-
+</div>
 
 </div>
 

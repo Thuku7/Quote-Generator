@@ -65,6 +65,7 @@ downvoteQuote(index:any){
 
 }
 
+
   
 
   constructor() { }
